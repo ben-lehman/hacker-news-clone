@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { fetchMainPosts } from '../utils/api'
+import Title from './Title.js'
+import PostMetaInfo from './PostMetaInfo'
 
 function PostList ({ posts }) {
   if (posts.length === 0) {
@@ -9,12 +11,17 @@ function PostList ({ posts }) {
   }
 
   return(
-    <ul>
+    <ul className="post-list">
       {posts.map((post) => {
-        console.log(post)
         return (
-          <li key={post.id}>
-            <a href={post.url}><h2>{post.title}</h2></a>
+          <li key={post.id} className="post">
+            <Title url={post.url} title={post.title} />
+            <PostMetaInfo
+              id={post.id}
+              by={post.by}
+              time={post.time}
+              descendants={post.descendants}
+            />
           </li>
         )
       })}

@@ -1,3 +1,26 @@
 body {
-  background: green;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list a {
+  color: #006;
+  text-decoration: none;
+}
+
+.post-list h2 {
+  font-size: 16px;
+  font-family: Verdana, serif;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+
+.post-meta-info {
+  margin-top: 5px;
 }
