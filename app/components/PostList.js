@@ -1,17 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Title from './Title'
-import PostMetaInfo from './PostMetaInfo'
+import Title from './Title';
+import PostMetaInfo from './PostMetaInfo';
 
-export default function PostList ({ posts }) {
+export default function PostList({ posts }) {
   if (posts.length === 0) {
-    return <p>No Posts</p>
+    return <p>No Posts</p>;
   }
 
-  return(
+  return (
     <ul className="post-list">
-      {posts.map((post) => {
+      {posts.map(post => {
         return (
           <li key={post.id} className="post">
             <Title url={post.url} title={post.title} />
@@ -22,8 +22,8 @@ export default function PostList ({ posts }) {
               descendants={post.descendants}
             />
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }
